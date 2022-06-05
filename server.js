@@ -6,7 +6,7 @@ const PORT = 8000
 app.use(cors())
 
 const artists = {
-    "Utada Hikaru" : {
+    "utada hikaru" : {
         "name": "Utada Hikaru",
         "type": "Solo Artist",
         "placeofbirth": "New York, NY, USA",
@@ -19,7 +19,7 @@ const artists = {
         "singles":
             ["Time Will Tell","Automatic","Movin' On Without You","First Love","Addicted to You","Wait & See (Risk)","For You","Time Limit","Can You Keep a Secret?","Final Distance","Traveling","Hikari","Sakura Drops","Letters","Colors","Dareka no Negai ga Kanau Koro","Easy Breezy (as Utada)","Devil Inside (as Utada)","Exodus '04 (as Utada)","Be My Last","You Make Me Want to Be a Man (as Utada)","Passion / Sanctuary","Keep Tryin'","This Is Love","Boku wa Kuma","Flavor of Life","Kiss & Cry","Beautiful World","Stay Gold","Heart Station","Prisoner of Love","Come Back to Me (as Utada)","Dirty Desire (as Utada)","Hymne à l'amour (Ai no Anthem)","Goodbye Happiness","Sakura Nagashi","Hanataba o Kimi ni","Manatsu no Tōriame","Michi","Ōzora de Dakishimete","Forevermore","Anata","Play a Love Song","Hatsukoi","Chikai / Don't Think Twice","Face My Fears","Time","Dare ni mo Iwa Nai","One Last Kiss","Pink Blood","Kimi ni Muchū"]
     },
-    "Survive Said The Prophet": {
+    "survive said the prophet": {
         "name": "Survive Said The Prophet",
         "type": "Band",
         "placeofbirth": "N/A",
@@ -32,7 +32,7 @@ const artists = {
         "singles":
             ["MeIaM","COCOON","NE:ONE / HI | LO","found & lost","RED","Common Sense","Things Unsaid","Closure","MUKANJYO","Paper Sky｜Win/Lose"]
     },
-    "One Ok Rock": {
+    "one ok rock": {
         "name": "ONE OK ROCK",
         "type": "Band",
         "placeofbirth": "N/A",
@@ -45,7 +45,7 @@ const artists = {
         "singles":
             ["Naihi Shinsho","Yume Yume","Et Cetera","Koi no Aibō Kokoro no Cupid","Kanzen Kankaku Dreamer","Jibun Rock","Answer is Near","Re:make/No Scared","The Beginning","the same as...","Deeper Deeper/Nothing Helps","Clock Strikes","Mighty Long Fall/Decision","Cry Out","Last Dance","The Way Back - Japanese Version","Always Coming Back","Taking Off","Bedroom Warfare","I was King","We Are","American Girls","Skyfall","Change","Stand Out Fit In","Wasted Nights","Renegades","Broken Heart of Gold","Wonder"]
     },
-    "LiSA" : {
+    "lisa" : {
         "name": "LiSA",
         "type": "Solo Artist",
         "placeofbirth": "Seki, Gifu Prefecture, Japan",
@@ -58,7 +58,7 @@ const artists = {
         "singles":
             ["Oath Sign","Crossing Field","Best Day, Best Way","Träumerei","Rising Hope","Bright Flight","L. Miranic","Shirushi","Rally Go Round","Empty Mermaid","Brave Freak Out","Catch the Moment","Datte Atashi no Hero","Ash","Akai Wana (Who Loves It?)","Adamas","Gurenge","Unlasting","Homura","Dawn","Hadashi no Step","Akeboshi","Shirogane"]
     },
-    "Yoasobi" : {
+    "yoasobi" : {
         "name": "YOASOBI",
         "type": "Duo",
         "placeofbirth": "N/A",
@@ -71,7 +71,7 @@ const artists = {
         "singles":
             ["Yoru ni Kakeru","Ano Yume o Nazotte","Halzion","Tabun","Gunjō","Haruka","Kaibutsu","Yasashii Suisei","Mō Sukoshi Dake","Sangenshoku","Loveletter","Taishō Roman","Tsubame (featuring Midories)","Mr.","Suki da"]
     },
-    "Alexandros" : {
+    "alexandros" : {
         "name": "[Alexandros]",
         "type": "Band",
         "placeofbirth": "N/A",
@@ -106,7 +106,7 @@ app.get("/api", (req, res) => {
 })
 
 app.get("/api/:artistname", (req, res) => {
-    const name = req.params.artistname
+    const name = req.params.artistname.toLowerCase()
     if (artists[name]) {
         res.json(artists[name])
         console.log("successfully obtained artist information")
